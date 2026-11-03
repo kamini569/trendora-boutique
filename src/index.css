@@ -1,0 +1,146 @@
+/* DO NOT CHANGE */
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+/* DO NOT CHANGE */
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Trendora type + storefront accents */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --color-sand: #f2e7db;
+  --color-sand-deep: #e6d5c5;
+  --color-blush: #f6e2df;
+  --color-rosewood: #7e3548;
+  --color-marigold: #e2a33c;
+  --color-marigold-soft: #f8e8c8;
+  --color-ink: #2a211e;
+}
+
+/* CHANGE VALUES FOR THEME */
+:root {
+  --radius: 1rem;
+  --background: #fbf6f0;
+  --foreground: #2a211e;
+  --card: #fffcf8;
+  --card-foreground: #2a211e;
+  --popover: #fffcf8;
+  --popover-foreground: #2a211e;
+  --primary: #7e3548;
+  --primary-foreground: #fff8f2;
+  --secondary: #f2e7db;
+  --secondary-foreground: #4b2b30;
+  --muted: #f4ebe2;
+  --muted-foreground: #7c6a62;
+  --accent: #f6e2df;
+  --accent-foreground: #6e2b3d;
+  --destructive: #b4433c;
+  --border: #eadfd3;
+  --input: #e4d6c9;
+  --ring: #b06b7c;
+  --chart-1: #7e3548;
+  --chart-2: #e2a33c;
+  --chart-3: #c98b98;
+  --chart-4: #8c9a7c;
+  --chart-5: #6f4b3e;
+  --sidebar: #fffcf8;
+  --sidebar-foreground: #2a211e;
+  --sidebar-primary: #7e3548;
+  --sidebar-primary-foreground: #fff8f2;
+  --sidebar-accent: #f6e2df;
+  --sidebar-accent-foreground: #6e2b3d;
+  --sidebar-border: #eadfd3;
+  --sidebar-ring: #b06b7c;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-sans);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+  }
+  button:not([disabled]),
+  [role="button"]:not([disabled]) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: #f0cfc8;
+    color: #4b1f2b;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-[10px] font-semibold uppercase tracking-[0.24em] text-primary/75;
+  }
+  .display-tight {
+    font-family: var(--font-display);
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  .field-label {
+    @apply text-[11px] font-semibold uppercase tracking-[0.16em] text-muted-foreground;
+  }
+  .soft-card {
+    @apply rounded-[1.4rem] border border-border/80 bg-card;
+    box-shadow: 0 1px 0 rgba(42, 33, 30, 0.03), 0 18px 40px -32px rgba(74, 44, 51, 0.45);
+  }
+}
+
+/* Slim, warm scrollbar for filter rails */
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
